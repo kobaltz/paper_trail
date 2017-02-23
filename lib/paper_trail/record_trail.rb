@@ -251,7 +251,7 @@ module PaperTrail
         item_id: @record.id,
         item_type: @record.class.base_class.name,
         event: @record.paper_trail_event || "destroy",
-        object: recordable_object,
+        # object: recordable_object,
         whodunnit: PaperTrail.whodunnit
       }
       add_transaction_id_to(data)
@@ -287,7 +287,7 @@ module PaperTrail
     def data_for_update
       data = {
         event: @record.paper_trail_event || "update",
-        object: recordable_object,
+        # object: recordable_object,
         whodunnit: PaperTrail.whodunnit
       }
       if @record.respond_to?(:updated_at)
